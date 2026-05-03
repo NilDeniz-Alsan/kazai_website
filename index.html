@@ -1,11 +1,11 @@
 ﻿<!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-theme="dark" data-bs-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>KAZAI – Yapay zekâ tabanlı kaza analizi ve hasar tespiti</title>
   <meta name="description" content="KAZAI: Yapay zekâ tabanlı kaza analizi ve hasar tespiti platformu" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -13,170 +13,222 @@
 <body>
 
 <!-- NAV -->
-<nav id="nav" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-top">
+<nav id="nav" class="navbar navbar-expand-lg fixed-top">
   <div class="container container-max">
-    <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#home" aria-label="KAZAI ana sayfa">
-      <img src="assets/KAZAI_Logo%20Renkli%20(1).png" alt="KAZAI logo" style="height:44px">
+    <a class="navbar-brand" href="#home" aria-label="KAZAI ana sayfa">
+      <img src="assets/KAZAI_Logo%20Renkli%20(1).png" alt="KAZAI logo" style="height:40px">
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainnav" aria-controls="mainnav" aria-expanded="false" aria-label="Menüyü aç">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainnav"
+            aria-controls="mainnav" aria-expanded="false" aria-label="Menüyü aç">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="mainnav">
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4">
-        <li class="nav-item"><a class="nav-link" href="#home">Ana Sayfa</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">Hakkımızda</a></li>
-        <li class="nav-item"><a class="nav-link" href="#services">Hizmetlerimiz</a></li>
-        <li class="nav-item"><a class="nav-link" href="#partners">İş Ortaklarımız</a></li>
-        <li class="nav-item ms-lg-3">
-          <a class="btn btn-dark rounded-3 px-4 mt-1" href="#contact">İletişim</a>
-        </li>
+      <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="#problem">Problem</a></li>
+        <li class="nav-item"><a class="nav-link" href="#solution">Çözüm</a></li>
+        <li class="nav-item"><a class="nav-link" href="#how-it-works">Nasıl Çalışır</a></li>
+        <li class="nav-item"><a class="nav-link" href="#partners">İş Ortakları</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">İletişim</a></li>
       </ul>
+      <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Temayı değiştir" title="Temayı değiştir">
+          <span class="icon-sun" aria-hidden="true">☀️</span>
+          <span class="icon-moon" aria-hidden="true">🌙</span>
+        </button>
+        <a class="btn-primary-custom" href="https://app.kazai.com.tr" target="_blank" rel="noopener" aria-label="HasarBul uygulamasına git">HasarBul&#8217;a Git →</a>
+      </div>
     </div>
   </div>
 </nav>
 
-<!-- HERO (Before / After) -->
-<section id="home" class="hero">
-  <div class="img-compare img-compare-hero" data-initial="50">
-    <img class="ic-bottom" src="assets/Genis_taramali.jpg" alt="Hasarlı görünüm" style="background: #ffff">
-    <div class="ic-top-wrap">
-      <img class="ic-top" src="assets/Genis_taramasiz.jpg" alt="Boş görünüm" style="background: #ffff">
-      <div class="ic-after-tint" aria-hidden="true"></div>
+<!-- HERO -->
+<section id="home" class="hero-section">
+  <!-- Full-screen image compare background -->
+  <div class="hero-compare-bg">
+    <div class="img-compare" data-initial="50">
+      <img class="ic-bottom" src="assets/Genis_taramali.jpg" alt="Yapay zekâ hasar analizi – sonrası">
+      <div class="ic-top-wrap">
+        <img class="ic-top" src="assets/Genis_taramasiz.jpg" alt="Yapay zekâ hasar analizi – öncesi">
+      </div>
+      <div class="ic-handle" role="slider" aria-label="Önce/Sonra karşılaştırması"
+           aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+        <div class="ic-knob"><span class="ic-arrows"></span></div>
+      </div>
     </div>
-    <div class="ic-gradient" aria-hidden="true"></div>
-    <div class="ic-handle" role="slider" aria-label="Önce/Sonra"
-         aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
-      <div class="ic-knob"><span class="ic-arrows"></span></div>
+    <div class="compare-labels" aria-hidden="true">
+      <span>Öncesi</span>
+      <span>Sonrası</span>
     </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
   </div>
 
-  <div class="hero-inner container container-max">
-    <h1 class="display-4 mb-2 text-dark">KAZAI</h1>
-    <p class="fs-5 text-dark">Yapay zekâ tabanlı kaza analizi ve hasar tespit sistemi</p>
+  <!-- Text: top center, below navbar -->
+  <div class="hero-center-overlay">
+    <div class="badge-pill mb-3">AI Destekli Kaza Analizi Ve Hasar Tespiti</div>
+    <h1 class="hero-title">Kaza Anından <span class="text-accent typing-text" data-text="Çözüme"></span><br>Saniyeler İçinde</h1>
   </div>
 </section>
 
-<!-- Vizyon & Misyon -->
-<section class="section-dark py-5">
+<!-- PROBLEM -->
+<section id="problem" class="section py-section">
   <div class="container container-max">
-    <div class="row g-4 align-items-lg-stretch">
-      <div class="col-lg-4">
-        <div class="vizyon-card p-4 h-100 d-flex">
-          <div class="d-flex align-items-start gap-3 w-100">
-            <span class="rule"></span>
-            <div class="w-100">
-              <div class="text-uppercase small text-secondary mb-2" style="letter-spacing:.25em">VİZYON &amp; MİSYON</div>
-              <h2 class="h4 fw-normal my-4 px-3">
-                KazAI – Yapay zekâ ile kazaların yönetiminde hız, güven ve şeffaflık için küresel standart.
-              </h2>
-              <p class="text-light px-3 mb-0">
-                KazAI, kaza sonrası süreçlerin dijital dönüşümünde küresel ölçekte standart belirleyen ve güven, hız ile
-                şeffaflığın simgesi olmayı hedefleyen bir yapay zekâ platformudur. Vizyonumuz, araç teknolojilerinin
-                gelişimiyle birlikte sürücünün müdahalesine gerek kalmadan kazaların eksiksiz ve otomatik yönetildiği yeni
-                bir döneme öncülük etmektir.
-              </p>
-            </div>
+    <div class="section-header fade-up">
+      <div class="section-tag">Problem</div>
+      <h2 class="section-title mt-3">Kaza Sonrası Süreç<br><span class="text-accent">Neden Bu Kadar Zor?</span></h2>
+      <p class="section-desc">Türkiye'deki hasarlı araç pazarı büyük; ancak süreçler hâlâ manuel, yavaş ve şeffaf değil.</p>
+    </div>
+    <div class="row g-4 mt-2">
+      <div class="col-md-6 col-lg-3">
+        <div class="problem-card fade-up">
+          <div class="problem-icon">⏱️</div>
+          <h3>Uzun Bekleme</h3>
+          <p>Eksper randevuları ve bürokratik işlemler haftalar alıyor. Araçsız kalan sürücüler büyük mağduriyet yaşıyor.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="problem-card fade-up">
+          <div class="problem-icon">🔍</div>
+          <h3>Şeffafsız Değerleme</h3>
+          <p>Hasar miktarı ve kusur oranı taraflara göre değişiyor; anlaşmazlıklar uzun süre çözülemiyor.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="problem-card fade-up">
+          <div class="problem-icon">💸</div>
+          <h3>Yüksek Maliyetler</h3>
+          <p>Gizli masraflar ve eksper ücretleri sigorta süreçlerini karmaşık ve pahalı hâle getiriyor.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="problem-card fade-up">
+          <div class="problem-icon">📋</div>
+          <h3>Kâğıt Tabanlı Yönetim</h3>
+          <p>Belgeler faks ve e-postayla iletiliyor; dijital dönüşüm çok yavaş ilerliyor.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section id="solution" class="section py-section section-alt">
+  <div class="container container-max">
+    <div class="section-header fade-up">
+      <div class="section-tag">Çözüm</div>
+      <h2 class="section-title mt-3">KazAI'nin <span class="text-accent">Yaklaşımı</span></h2>
+      <p class="section-desc">Uçtan uca dijital ekosistem ile kaza sonrası tüm süreci tek platformda yönetin.</p>
+    </div>
+    <div class="row g-4 mt-2">
+      <div class="col-lg-6">
+        <div class="solution-card fade-up">
+          <div class="solution-num">01</div>
+          <div>
+            <h3>Yapay Zekâ ile Hasar Tespiti</h3>
+            <p>Kaza fotoğraflarını yapay zekâ tabanlı görüntü işleme teknolojisiyle analiz eder; hasarlı bölgeleri yüksek doğrulukla tespit eder ve kusur oranını belirler.</p>
           </div>
         </div>
       </div>
-      <div class="col-lg-8">
-        <div class="h-100 d-flex align-items-center">
-          <img src="assets/vizyon_misyon_dark.png" alt="KAZAI logo" class="img-fluid">
+      <div class="col-lg-6">
+        <div class="solution-card fade-up">
+          <div class="solution-num">02</div>
+          <div>
+            <h3>Onarım Teklifleri ve Maliyet Hesaplama</h3>
+            <p>Hasar analizi sonrası anlaşmalı onarım merkezlerinden teklifleri toplar. Maliyetler şeffaflaşır; sürücüler en uygun seçeneği tek platformda karşılaştırır.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="solution-card fade-up">
+          <div class="solution-num">03</div>
+          <div>
+            <h3>Çekici ve Kiralık Araç Hizmeti</h3>
+            <p>Kaza sonrası araçsız kalmayı ortadan kaldırır. En yakın çekici hizmetini yönlendirir; kullanıcıya uygun kiralık araç seçeneklerini anında sunar.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="solution-card fade-up">
+          <div class="solution-num">04</div>
+          <div>
+            <h3>Basitleştirilmiş Sigorta Süreci</h3>
+            <p>Detaylı raporlar sigorta şirketleri için karar alma sürecini hızlandırır. Ödemeler daha hızlı, şeffaf ve adil biçimde gerçekleşir.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="section-transition"></div>
-
-<!-- HİZMETLER -->
-<section id="services" class="py-5">
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="section py-section">
   <div class="container container-max">
-    <div class="d-flex justify-content-between align-items-end mb-3">
-      <h2 class="h1 m-0">HİZMETLER</h2>
+    <div class="section-header fade-up">
+      <div class="section-tag">Nasıl Çalışır</div>
+      <h2 class="section-title mt-3">4 Adımda <span class="text-accent">Hızlı Çözüm</span></h2>
+      <p class="section-desc">Kaza anından çözüme kadar tüm süreci KazAI yönetir.</p>
     </div>
-
-    <div class="row g-4 align-items-center my-5">
-      <div class="col-lg-4">
-        <h3 class="display-6 fw-normal">Yapay Zekâ ile Hasar Tespiti</h3>
-        <p class="text-secondary">
-          KazAI, kaza fotoğraflarını yapay zekâ tabanlı görüntü işleme teknolojisiyle analiz ederek aracın hasarlı
-          bölgelerini yüksek doğrulukla tespit eder ve kusur oranını belirler. Böylece belirsizlikler ortadan kalkar,
-          herkes için adil ve güvenilir bir süreç sağlanır.
-        </p>
-      </div>
-      <div class="col-lg-8">
-        <div class="rounded-4 overflow-hidden shadow-none">
-          <img src="assets/hizmetler1.png" alt="Hasar tespiti illüstrasyonu" class="img-fluid">
+    <div class="how-steps mt-5">
+      <div class="how-step fade-up">
+        <div class="step-icon-wrap">
+          <div class="step-icon">📸</div>
+          <div class="step-num">1</div>
         </div>
+        <div class="step-connector" aria-hidden="true"></div>
+        <h3 class="step-title">Fotoğraf Yükle</h3>
+        <p class="step-desc">Kaza yerinde araç fotoğraflarını HasarBul uygulamasıyla çekin ve yükleyin.</p>
       </div>
-    </div>
-
-    <div class="row g-4 align-items-center my-5">
-      <div class="col-lg-4 order-lg-2">
-        <h3 class="display-6 fw-normal">Onarım Teklifleri ve Maliyet Hesaplama</h3>
-        <p class="text-secondary">
-          Hasar analizi sonrası KazAI, anlaşmalı onarım merkezlerinden teklifleri toplar ve kullanıcıya sunar. Bu sayede
-          maliyetler şeffaflaşır, sürücüler en uygun seçeneği tek platform üzerinden kolayca değerlendirebilir.
-        </p>
-      </div>
-      <div class="col-lg-8 order-lg-1">
-        <div class="rounded-4 overflow-hidden shadow-none">
-          <img src="assets/hizmetler2.png" alt="Onarım maliyet hesaplama illüstrasyonu" class="img-fluid">
+      <div class="how-step fade-up">
+        <div class="step-icon-wrap">
+          <div class="step-icon">🤖</div>
+          <div class="step-num">2</div>
         </div>
+        <div class="step-connector" aria-hidden="true"></div>
+        <h3 class="step-title">AI Analizi</h3>
+        <p class="step-desc">Yapay zekâ motorumuz hasarlı bölgeleri, kusur oranını ve tahmini maliyeti saniyeler içinde hesaplar.</p>
       </div>
-    </div>
-
-    <div class="row g-4 align-items-center my-5">
-      <div class="col-lg-4">
-        <h3 class="display-6 fw-normal">Çekici ve Kiralık Araç Hizmeti</h3>
-        <p class="text-secondary">
-          KazAI, kaza sonrası araçsız kalmayı ortadan kaldırır. En yakın çekici hizmetini yönlendirir ve kullanıcıya
-          ihtiyacına uygun kiralık araç seçeneklerini anında sunar.
-        </p>
-      </div>
-      <div class="col-lg-8">
-        <div class="rounded-4 overflow-hidden shadow-none">
-          <img src="assets/hizmetler3.png" alt="Çekici ve kiralık araç illüstrasyonu" class="img-fluid">
+      <div class="how-step fade-up">
+        <div class="step-icon-wrap">
+          <div class="step-icon">📊</div>
+          <div class="step-num">3</div>
         </div>
+        <div class="step-connector" aria-hidden="true"></div>
+        <h3 class="step-title">Rapor Al</h3>
+        <p class="step-desc">Detaylı hasar raporu ve onarım teklifleri anında oluşturulur; sigorta şirketiyle otomatik paylaşılır.</p>
       </div>
-    </div>
-
-    <div class="row g-4 align-items-center my-5">
-      <div class="col-lg-4 order-lg-2">
-        <h3 class="display-6 fw-normal">Basitleştirilmiş Sigorta Süreci</h3>
-        <p class="text-secondary">
-          KazAI'nin sunduğu detaylı raporlar, sigorta şirketleri için karar alma sürecini hızlandırır. Kullanıcılar
-          ödemelerin daha hızlı, şeffaf ve adil şekilde gerçekleşmesini deneyimler.
-        </p>
-      </div>
-      <div class="col-lg-8 order-lg-1">
-        <div class="rounded-4 overflow-hidden shadow-none">
-          <img src="assets/hizmetler1.png" alt="Basitleştirilmiş sigorta süreci illüstrasyonu" class="img-fluid">
+      <div class="how-step fade-up">
+        <div class="step-icon-wrap">
+          <div class="step-icon">✅</div>
+          <div class="step-num">4</div>
         </div>
+        <div class="step-connector last" aria-hidden="true"></div>
+        <h3 class="step-title">Çözüme Kavuş</h3>
+        <p class="step-desc">Çekici, kiralık araç ve onarım hizmetleri tek ekrandan yönetilir; ödeme hızla gerçekleşir.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- NEDEN KAZAI -->
-<section class="py-5 section-dark section-tall">
+<!-- WHY KAZAI -->
+<section class="section py-section section-alt">
   <div class="container container-max">
-    <div class="row g-4 align-items-lg-stretch">
-      <div class="col-lg-3 d-flex justify-content-start">
-        <div class="rounded-4 p-4 shadow-soft bg-white neden-card nk-wide h-100">
-          <div class="neden-title large text-dark mb-2">NEDEN KAZAI?</div>
-          <p class="my-4 text-dark">
-            KazAI, trafik kazalarının ardından sürücüler, sigorta şirketleri ve onarım merkezleri için süreci uçtan uca
-            dijitalleştiren bir platformdur. Yapay zekâ tabanlı görüntü işleme teknolojimiz, kaza fotoğraflarını analiz
-            ederek hasarı, kusur oranını ve onarım maliyetini dakikalar içinde raporlar. Böylece kaza sonrasındaki
-            karmaşık süreç, kullanıcılar için tek ekranda basit, hızlı ve güvenilir bir şekilde yönetilebilir hale gelir.
-          </p>
-        </div>
+    <div class="row g-4 g-lg-5 align-items-center">
+      <div class="col-lg-5 order-lg-1 fade-up">
+        <div class="section-tag">Neden KazAI?</div>
+        <h2 class="section-title mt-3">Kaza Sonrası <span class="text-accent">Güvenilir Partner</span></h2>
+        <p class="text-muted-custom mt-3">
+          KazAI, trafik kazalarının ardından sürücüler, sigorta şirketleri ve onarım merkezleri için süreci
+          uçtan uca dijitalleştiren yapay zekâ platformudur.
+        </p>
+        <ul class="why-list mt-4">
+          <li><span class="check-icon">✓</span> Dakikalar içinde hasar raporu</li>
+          <li><span class="check-icon">✓</span> Şeffaf kusur oranı tespiti</li>
+          <li><span class="check-icon">✓</span> Anlaşmalı onarım ağı</li>
+          <li><span class="check-icon">✓</span> KVKK ve GDPR uyumlu</li>
+          <li><span class="check-icon">✓</span> 7/24 müşteri desteği</li>
+        </ul>
       </div>
-      <div class="col-lg-9">
-        <div class="video-frame wide-desktop">
+      <div class="col-lg-7 order-lg-2 fade-up">
+        <div class="video-card">
           <video autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/animasyon_poster.jpg">
             <source src="assets/animasyon.mp4" type="video/mp4" />
             Tarayıcınız video etiketini desteklemiyor.
@@ -187,72 +239,145 @@
   </div>
 </section>
 
-<!-- HAKKIMIZDA -->
-<section id="about" class="py-5">
+<!-- ABOUT -->
+<section id="about" class="section py-section">
   <div class="container container-max">
-    <div class="row g-4">
-      <div class="col-lg-12">
-        <h2 class="fw-semibold display-4 mb-4">Hakkımızda</h2>
-        <p class="text-black">
-          KazAI, kaza sonrası süreci baştan sona dijitalleştirerek sürücüler, sigorta şirketleri ve onarım merkezleri için daha hızlı, şeffaf ve adil bir ekosistem oluşturur.
-          Yapay zeka tabanlı çözümlerimiz, trafik güvenliğinin artırılmasına, hasar süreçlerinin hızlanmasına ve maliyetlerin optimize edilmesine katkı sağlar.
-          Amacımız, Türkiye'den dünyaya yayılan, sürücülerin hayatını kolaylaştıran ve sektöre yeni bir standart getiren öncü bir teknoloji platformu olmaktır.
+    <div class="row justify-content-center">
+      <div class="col-12 fade-up text-center">
+        <div class="section-tag">Hakkımızda</div>
+        <h2 class="section-title mt-3">Multidisipliner <span class="text-accent">Bir Ekip</span></h2>
+        <p class="text-muted-custom mt-4">
+          KazAI, kaza sonrası süreci baştan sona dijitalleştirerek sürücüler, sigorta şirketleri ve
+          onarım merkezleri için daha hızlı, şeffaf ve adil bir ekosistem oluşturur. Yapay zekâ tabanlı
+          çözümlerimiz trafik güvenliğinin artırılmasına, hasar süreçlerinin hızlanmasına ve maliyetlerin
+          optimize edilmesine katkı sağlar.
         </p>
-        <p class="text-black">KazAI ekibi; 3 yapay zeka mühendisi, 6 yazılım mühendisi, 1 veri analisti ve 1 makine mühendisinden oluşan multidisipliner bir kadroya sahiptir.</p>
-        <p class="text-black">KazAI, verilerini yalnızca yasal izinler ve kullanıcı onayı çerçevesinde toplar.
-          Tüm veriler, KVKK ve GDPR gibi uluslararası standartlara uygun olarak anonimleştirilir ve şifrelenmiş ortamlarda saklanır.
-          Bu sayede kullanıcı verileri korunur ve güvenliği en üst düzeyde sağlanır.</p>
+        <p class="text-muted-custom">
+          Amacımız, Türkiye'den dünyaya yayılan, sürücülerin hayatını kolaylaştıran ve sektöre yeni bir
+          standart getiren öncü bir teknoloji platformu olmaktır.
+        </p>
+        <p class="text-muted-custom">
+          KazAI verilerini yalnızca yasal izinler ve kullanıcı onayı çerçevesinde toplar. Tüm veriler,
+          KVKK ve GDPR gibi uluslararası standartlara uygun olarak anonimleştirilir ve şifreli ortamlarda
+          saklanır.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- İŞ ORTAKLARIMIZ -->
-<section id="partners" class="section-dark py-5">
+<!-- VISION MISSION -->
+<section class="section py-section section-alt">
   <div class="container container-max">
-    <div class="row g-4 align-items-center">
-      <div class="col-lg-6">
-        <div class="text-uppercase small text-white mb-2" style="letter-spacing:.25em">SEKTÖR</div>
-        <h2 class="display-4 fw-semibold mb-3">İş Ortaklarımız</h2>
-        <p class="text-secondary">KazAI, ekosistem desteği ve sektörle kurduğu güçlü ilişkilerle güvenilir bir büyüme potansiyeli sunmaktadır. Türkiye'nin lider girişimcilik merkezi İTÜ Çekirdek ile olan iş birliği, KazAI'nin inovasyon gücünü ve global vizyonunu pekiştirirken, sigorta sektörünün öncü şirketleriyle sürdürülen stratejik temaslar güçlü ortaklıklara dönüşmektedir.</p>
+    <div class="section-header fade-up">
+      <div class="section-tag">Vizyon &amp; Misyon</div>
+      <h2 class="section-title mt-3">Küresel <span class="text-accent">Standart</span></h2>
+    </div>
+    <div class="row g-4 mt-2">
+      <div class="col-md-6">
+        <div class="vm-card fade-up">
+          <div class="vm-icon">🎯</div>
+          <h3 class="vm-label">Vizyon</h3>
+          <p>Araç teknolojilerinin gelişimiyle birlikte sürücünün müdahalesine gerek kalmadan kazaların eksiksiz ve otomatik yönetildiği yeni bir döneme öncülük etmek.</p>
+        </div>
       </div>
-      <div class="col-lg-6">
-        <div class="d-flex justify-content-center align-items-center">
-          <img src="assets/itücekirdeksiyahbeyaz.png" class="img-fluid" style="max-height:300px" alt="İTÜ Çekirdek logosu">
+      <div class="col-md-6">
+        <div class="vm-card fade-up">
+          <div class="vm-icon">🚀</div>
+          <h3 class="vm-label">Misyon</h3>
+          <p>Kaza sonrası süreçlerin dijital dönüşümünde küresel ölçekte standart belirleyen; güven, hız ve şeffaflığın simgesi olan yapay zekâ platformu olmak.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- İLETİŞİM -->
-<section id="contact" class="py-5">
+<!-- PARTNERS -->
+<section id="partners" class="section py-section">
   <div class="container container-max">
-    <div class="row g-5 align-items-start">
-      <div class="col-lg-7">
-        <div class="text-uppercase fw-semibold mb-4" style="letter-spacing:.25em">İLETİŞİM</div>
-        <dl class="py-3 row gy-4">
-          <dt class="col-4 col-md-3 text-secondary fw-semibold">Telefon</dt>
-          <dd class="col-8 col-md-9">
-            <div><a href="tel:+905511689525" class="text-decoration-none">(+90) 551 168 95 25</a></div>
-            <div><a href="tel:+905414056344" class="text-decoration-none">(+90) 541 405 63 44</a></div>
-          </dd>
-          <dt class="col-4 col-md-3 text-secondary fw-semibold">E-posta</dt>
-          <dd class="col-8 col-md-9"><a href="mailto:kazai.platform@gmail.com" class="text-decoration-none">kazai.platform@gmail.com</a></dd>
-          <dt class="col-4 col-md-3 text-secondary fw-semibold">Adres</dt>
-          <dd class="col-8 col-md-9">İTÜ Arı Teknokent 3 İç<br>Kapı No:1101, 34485<br>Sarıyer / İstanbul</dd>
-        </dl>
+    <div class="section-header fade-up">
+      <div class="section-tag">Sektör</div>
+      <h2 class="section-title mt-3">İş <span class="text-accent">Ortaklarımız</span></h2>
+      <p class="section-desc">
+        KazAI, ekosistem desteği ve sektörle kurduğu güçlü ilişkilerle güvenilir bir büyüme potansiyeli sunmaktadır.
+      </p>
+    </div>
+    <div class="partners-grid mt-5 fade-up">
+      <div class="partner-logo-wrap">
+        <img src="assets/itücekirdeksiyahbeyaz.png" alt="İTÜ Çekirdek iş ortağı logosu" class="partner-logo">
       </div>
-      <div class="col-lg-5 py-5 d-flex justify-content-center align-items-center">
-        <img src="assets/KAZAI_Logo%20Renkli%20(1).png" alt="KAZAI logo" class="img-fluid" style="max-width:360px">
+    </div>
+    <p class="text-muted-custom text-center mt-4 fade-up">
+      Türkiye'nin lider girişimcilik merkezi İTÜ Çekirdek ile olan iş birliği, KazAI'nin inovasyon gücünü
+      ve global vizyonunu pekiştirmektedir.
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="hasarbul" class="section py-section cta-section section-alt">
+  <div class="container container-max">
+    <div class="cta-card fade-up">
+      <div class="cta-glow" aria-hidden="true"></div>
+      <h2 class="cta-title">HasarBul ile Hemen Başlayın</h2>
+      <p class="cta-desc">
+        Aracınızın fotoğraflarını yükleyin; yapay zekâmız hasarlı parçaları tespit etsin,
+        onarım maliyetini hesaplasın ve piyasa değerini anlık olarak çıkarsın.
+        ihale sürecini tek platformdan yönetin.
+      </p>
+      <div class="cta-features">
+        <span>🔍 Hasar Tespiti</span>
+        <span>💰 Maliyet Hesaplama</span>
+        <span>📈 Piyasa Değeri</span>
+        <span>🏷️ İhale &amp; Satış</span>
+      </div>
+      <a href="https://app.kazai.com.tr" target="_blank" rel="noopener" class="btn-primary-custom btn-lg-custom mt-4 d-inline-block" aria-label="HasarBul uygulamasını aç">HasarBul&#8217;a Git →</a>
+      </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section py-section">
+  <div class="container container-max">
+    <div class="section-header fade-up">
+      <div class="section-tag">İletişim</div>
+      <h2 class="section-title mt-3">Bizimle <span class="text-accent">İletişime Geçin</span></h2>
+    </div>
+    <div class="row g-4 mt-2 justify-content-center">
+      <div class="col-md-4 col-sm-6">
+        <div class="contact-card fade-up">
+          <div class="contact-card-icon">📞</div>
+          <h3 class="contact-card-label">Telefon</h3>
+          <a href="tel:+905511689525">(+90) 551 168 95 25</a><br>
+          <a href="tel:+905414056344">(+90) 541 405 63 44</a>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="contact-card fade-up">
+          <div class="contact-card-icon">✉️</div>
+          <h3 class="contact-card-label">E-posta</h3>
+          <a href="mailto:kazai.platform@gmail.com">kazai.platform@gmail.com</a>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="contact-card fade-up">
+          <div class="contact-card-icon">📍</div>
+          <h3 class="contact-card-label">Adres</h3>
+          <span>İTÜ Arı Teknokent 3 İç<br>Kapı No:1101, 34485<br>Sarıyer / İstanbul</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="py-4 border-top">
-  <div class="container container-max">© <span id="y"></span> KAZAI. Tüm hakları saklıdır.</div>
+<footer class="site-footer py-4">
+  <div class="container container-max">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <img src="assets/KAZAI_Logo%20Renkli%20(1).png" alt="KAZAI" style="height:30px">
+      <p class="mb-0 footer-text">&copy; <span id="y"></span> KAZAI. Tüm hakları saklıdır.</p>
+    </div>
+  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
