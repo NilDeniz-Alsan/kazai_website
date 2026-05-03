@@ -1171,6 +1171,7 @@ a { text-decoration: none; color: inherit; }
 
   /* WHY KAZAI */
   .video-card { margin-top: 1.5rem; }
+  .why-list { align-items: center; }
 
   /* TEAM STATS */
   .team-stats { margin-top: 2rem; }
